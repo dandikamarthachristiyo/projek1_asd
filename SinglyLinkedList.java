@@ -116,8 +116,19 @@ public class SinglyLinkedList implements LinkedList{
     }
     @Override
     public Object get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index di luar batas");
+        }
+
+        Node currentNode = head;
+
+        for (int i = 0; i < index; i++) {
+            currentNode = currentNode.pointer;
+        }
+
+        return currentNode.data;
         // TODO digunakan untuk mengembalikan data pada index ke-i dimulai dari head. Head memiliki index 0
-        return null;
+        //return null;
     }
     @Override
     public int indexOf(Object targetData) {
@@ -138,7 +149,7 @@ public class SinglyLinkedList implements LinkedList{
     public Object[] toArray() {
         Object[] arr = new Object[size];
 
-            Node current = head;
+        Node current = head;
 
         for (int i =0; i < size; i++){
             arr[i] = current.data;
