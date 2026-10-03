@@ -132,8 +132,22 @@ public class SinglyLinkedList implements LinkedList{
     }
     @Override
     public int indexOf(Object targetData) {
+        Node currentNode = head;
+        int index = 0;
+
+        while (currentNode != null) {
+            if (currentNode.data.equals(targetData)) {
+                return index;
+            }
+
+            currentNode = currentNode.pointer;
+            index++;
+        }
+
+        return -1;
+
         // TODO digunakan mencari kemunculan pertama targetData pada linked list dan mengembalikan indeksnya. Indeks dari head adalah 0. Jika tidak ada targetData pada linked list, kembalikan nilai -1 
-        return 0;
+        //return 0;
     }
     @Override
     public void printReverse() {
