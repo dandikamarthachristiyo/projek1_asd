@@ -122,8 +122,20 @@ public class DoublyLinkedList implements LinkedList{
 
     @Override
     public Object get(int index) {
+        if (index < 0 || head == null) {
+            throw new IndexOutOfBoundsException("Indeks tidak valid atau List kosong");
+        }
+        Node2P current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+            if (current == null) {
+                throw new IndexOutOfBoundsException("Indeks yang di inginkan melebihi ukuran List");
+            }
+        }
+        return current.data;
+
         // TODO digunakan untuk mengembalikan data pada index ke-i dimulai dari head. Head memiliki index 0
-        return null;
+        // return null;
     }
     @Override
     public int indexOf(Object targetData) {
