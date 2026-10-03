@@ -149,11 +149,11 @@ public class SinglyLinkedList implements LinkedList{
     public Object[] toArray() {
         Object[] arr = new Object[size];
 
-        Node current = head;
+        Node currentNode = head;
 
         for (int i =0; i < size; i++){
-            arr[i] = current.data;
-            current = current.pointer;
+            arr[i] = currentNode.data;
+            currentNode = currentNode.pointer;
         }
 
         return arr;
