@@ -187,7 +187,16 @@ public class DoublyLinkedList implements LinkedList{
     }
     @Override
     public Object[] toArray() {
+        Object [] arrSimpan = new Object[size];
+
+        Node2P current = head;
+
+        for (int i = 0; i < size; i++) {
+            arrSimpan[i] = current.data;
+            current = current.next;
+        }
+        return arrSimpan;
         // TODO digunakan untuk mendapatkan keseluruhan data pada node-node di linked list dalam bentuk array. Data-data pada array disusun secara urut mulai dari head sampai dengan tail.
-        return null;
+        // return null;
     }
 }
